@@ -103,13 +103,11 @@ db2top -d doedvlp
 1. db2  2.connect to doedvlp  3.VALUES ASNCDC.ASNCDCSERVICES('status','asncdc')
 cd ~
 /datatest11/dbtest11/sqllib/bin/asncap capture_schema=asncdc capture_server=DOEDVLP &
-
 db2 get dbm cfg
 
 
-
-编译hudi命令
-mvn clean package -DskipTests -Dspark3.2 -Dflink1.13 -Dscala-2.12 -Dhadoop.version=3.2.2 -Pflink-bundle-shade-hive3
+当编译程序时需要用到某个jar包，但是又重远程仓库下载不下来可以先百度找到这个jar包然后手动编译到本地仓库
+mvn install:install-file -Dfile=./pentaho-aggdesigner-algorithm-5.1.5-jhyde.jar -DgroupId=org.pentaho -DartifactId=pentaho-aggdesigner-algorithm -Dversion=5.1.5-jhyde -Dpackaging=jar
 
 
 Kafka Schema-Registry
